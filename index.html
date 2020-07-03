@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="stylesheet.css">
+    <script src="budget.js" charset="utf-8"></script>
+    <title>Budget Calculator</title>
+  </head>
+  <body>
+    <div class="header">
+    <a href="index.html">  <h3 id="title"> Budget Calculator</h3></a>
+    </div>
+
+
+      <br>
+      <div class="dropdown">
+        <button class="dropbtn"><h4 id="dropb">Total Income</h4></button>
+        <div class="dropdown-content">
+          <h4 onclick="dropdown('Total Income')">Total Income </h4>
+          <h4 onclick="dropdown('Living Expenses')">Living Expenses </h4>
+          <h4 onclick="dropdown('Transportation')">Transportation </h4>
+          <h4 onclick="dropdown('Child Care')">Child Care </h4>
+          <h4 onclick="dropdown('Health Care')">Health Care </h4>
+          <h4 onclick="dropdown('Financial')">Financial </h4>
+          <h4 onclick="dropdown('Leisure')">Leisure </h4>
+
+        </div>
+      </div>
+
+      <div class="budget">
+        <iframe src="total_income.html" id="exp"></iframe>
+        <button type="button" id="submit" onclick=submit()>Submit</button>
+      </div>
+
+
+
+
+    <div class="footer">
+      <a href="https://github.com/ahmedwab"><img src="images/github.png" alt="Github Profile(ahmedwab)" id="gh"></a>
+    </div>
+  </body>
+</html>
