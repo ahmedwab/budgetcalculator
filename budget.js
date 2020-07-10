@@ -290,7 +290,7 @@ function submit(){
   display.style.visibility='visible';
 
 
-  document.getElementById('funds').innerHTML="Total Available Monthly Funds: "+total;
+  document.getElementById('funds').innerHTML="Total Available Monthly Funds: "+total.toFixed(2);
 
   loadcharts();
   }
