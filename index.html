@@ -20,7 +20,14 @@
         <div id="ti_option">
           <input type="button" value="Total Income" onclick="select_element('ti_content')" id="ti_button">
           <div class="content" id="ti_content">
-            <h4>Monthly Income</h4>
+            <select name="period" id="ti_period">
+                <option value="1">Daily</option>
+                <option value="2">Weekly</option>
+                <option value="3">Bi-Weekly</option>
+                <option value="4">Monthly</option>
+                <option value="5">Yearly</option>
+            </select>
+            <h4>Employment Income</h4>
               <input type="number" id="mi1" value="0">
             <h4>Investment Income</h4>
               <input type="number" id="mi2" value="0">
@@ -38,6 +45,13 @@
         <div id="le_option">
           <input type="button" value="Living Expenses" onclick="select_element('le_content')" id="le_button">
           <div class="content" id="le_content">
+            <select name="period" id="le_period">
+                <option value="1">Daily</option>
+                <option value="2">Weekly</option>
+                <option value="3">Bi-Weekly</option>
+                <option value="4">Monthly</option>
+                <option value="5">Yearly</option>
+            </select>
             <h4>Mortgage/Rent</h4>
               <input type="number" id="le1" value="0">
             <h4>Maintenance</h4>
@@ -60,6 +74,13 @@
         <div id="transportation">
           <input type="button" value="Transportation" onclick="select_element('t_content')" id="t_button">
           <div class="content" id="t_content">
+            <select name="period" id="t_period">
+                <option value="1">Daily</option>
+                <option value="2">Weekly</option>
+                <option value="3">Bi-Weekly</option>
+                <option value="4">Monthly</option>
+                <option value="5">Yearly</option>
+            </select>
             <h4>Vehicle</h4>
               <input type="number" id="t1" value="0">
             <h4>Gas</h4>
@@ -76,6 +97,13 @@
         <div id="financial">
           <input type="button" value="Financial" onclick="select_element('f_content')" id="f_button">
           <div class="content" id="f_content">
+            <select name="period" id="f_period">
+                <option value="1">Daily</option>
+                <option value="2">Weekly</option>
+                <option value="3">Bi-Weekly</option>
+                <option value="4">Monthly</option>
+                <option value="5">Yearly</option>
+            </select>
             <h4>TFSA contributions</h4>
               <input type="number" id="f1" value="0">
             <h4>RESP contributions</h4>
@@ -99,6 +127,13 @@
         <div id="childcare">
           <input type="button" value="Child Care" onclick="select_element('c_content')" id="c_button">
           <div class="content" id="c_content">
+            <select name="period" id="c_period">
+                <option value="1">Daily</option>
+                <option value="2">Weekly</option>
+                <option value="3">Bi-Weekly</option>
+                <option value="4">Monthly</option>
+                <option value="5">Yearly</option>
+            </select>
             <h4>School/Day care</h4>
               <input type="number" id="c1" value="0">
             <h4>Activity/Clubs</h4>
@@ -114,6 +149,13 @@
           <div id="healthcare">
             <input type="button" value="Health Care" onclick="select_element('h_content')" id="h_button">
             <div class="content" id="h_content">
+              <select name="period" id="h_period">
+                  <option value="1">Daily</option>
+                  <option value="2">Weekly</option>
+                  <option value="3">Bi-Weekly</option>
+                  <option value="4">Monthly</option>
+                  <option value="5">Yearly</option>
+              </select>
               <h4>Doctor Appointments</h4>
                 <input type="number" id="h1" value="0">
               <h4>Prescription Drugs</h4>
@@ -133,6 +175,13 @@
             <div id="leisure">
               <input type="button" value="Leisure" onclick="select_element('l_content')" id="l_button">
               <div class="content" id="l_content">
+                <select name="period" id="l_period">
+                    <option value="1">Daily</option>
+                    <option value="2">Weekly</option>
+                    <option value="3">Bi-Weekly</option>
+                    <option value="4">Monthly</option>
+                    <option value="5">Yearly</option>
+                </select>
                 <h4>Club Memberships</h4>
                   <input type="number" id="l1" value="0">
                 <h4>Subscriptions</h4>

@@ -75,6 +75,10 @@ body{
 .content button:active{
   background-color: navy;
 }
+.content select{
+  margin-top: 2%;
+  margin-left: 80%;
+}
 #submit{
   width:25%;
   background-color: white;

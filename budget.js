@@ -35,6 +35,34 @@ var income=[0,0,0,0,0];
 var values=[0,0,0,0,0,0,0];
 var total=0;
 
+
+function select_option(value,option){
+  var select=document.getElementById(option);
+  value=parseFloat(value);
+
+  if (select.value==1) {
+    return value*30.00;
+  }
+  if (select.value==2) {
+    return value*4.00;
+  }
+  if (select.value==3) {
+    return value*2.00;
+  }
+  if (select.value==4) {
+    return value;
+  }
+  if (select.value==4) {
+    return value/12.00;
+  }
+
+
+
+
+
+}
+
+
 function addti(){ //function for total income
   income[0]=parseFloat(document.getElementById('mi1').value);
   income[1]=parseFloat(document.getElementById('mi2').value);
@@ -44,6 +72,7 @@ function addti(){ //function for total income
 
 
 values[0]=income[0]+income[1]+income[2]+income[3]+income[4];
+values[0]=select_option(values[0],'ti_period');
 document.getElementById('ti_button').value="Total Income \u2713";
 remove_element('ti_content');
 }
@@ -58,6 +87,7 @@ function addle(){ //function for living expenses
   value7=parseFloat(document.getElementById('le7').value);
 
   values[1]=value1+value2+value3+value4+value5+value6+value7;
+  values[1]=select_option(values[1],'le_period');
   document.getElementById('le_button').value="Living Expenses \u2713";
    remove_element('le_content');
 }
@@ -70,6 +100,8 @@ function addt(){ //function for transportation
 
 
 values[2]=value1+value2+value3+value4;
+values[2]=select_option(values[2],'t_period');
+
 document.getElementById('t_button').value="Transportation \u2713";
 remove_element('t_content');
 
@@ -84,6 +116,8 @@ function addf(){ //function for financial
   value7=parseFloat(document.getElementById('f7').value);
 
 values[3]=value1+value2+value3+value4+value5+value6+value7;
+values[3]=select_option(values[3],'f_period');
+
 document.getElementById('f_button').value="Financial \u2713";
 remove_element('f_content');
 
@@ -95,6 +129,8 @@ function addc(){ //function for childcare
   value3=parseFloat(document.getElementById('c3').value);
 
   values[4]=value1+value2+value3;
+  values[4]=select_option(values[4],'c_period');
+
   document.getElementById('c_button').value="Child Care \u2713";
   remove_element('c_content');
 }
@@ -106,6 +142,8 @@ function addh(){ //function for financial
   value5=parseFloat(document.getElementById('h5').value);
 
   values[5]=value1+value2+value3+value4+value5;
+  values[5]=select_option(values[5],'h_period');
+
   document.getElementById('h_button').value="Health Care \u2713";
   remove_element('h_content');
 }
@@ -119,6 +157,8 @@ function addl(){ //function for leisure
 
 
   values[6]=value1+value2+value3+value4+value5+value6;
+  values[6]=select_option(values[6],'l_period');
+
 console.log(income);
 console.log(values);
 document.getElementById('l_button').value="Leisure \u2713";
@@ -127,6 +167,20 @@ remove_element('l_content');
 
 
 function submit(){
+
+  var expenses=0.0;
+
+  for(i=1;i<7;i++){
+    expenses+=values[i];
+  }
+  total=total-expenses;
+  if(values[0]==0  ){
+    window.alert("You did not report any income!")
+  }
+  if(expenses==0 ){
+    window.alert("You did not report any expenses!")
+  }
+  else{
   var page=document.getElementById('options');
   page.style.visibility='hidden';
   page.style.height='0px';
@@ -144,9 +198,7 @@ function submit(){
   display.style.visibility='visible';
   total=values[0];
 
-  for(i=1;i<7;i++){
-    total-=values[i];
-  }
+
   document.getElementById('funds').innerHTML="Total Available Funds: "+total;
 
   google.charts.load("current", {packages:["corechart"]});
@@ -192,5 +244,6 @@ function submit(){
         var chart = new google.visualization.PieChart(document.getElementById('income_chart'));
         chart.draw(data, options);
       }
+    }
 
 }
