@@ -1,2 +1,2 @@
 # budgetcalculator
-http://www.ahmedwab.github.io/budgetcalculator
+https://ahmedwab.github.io/budgetcalculator/
