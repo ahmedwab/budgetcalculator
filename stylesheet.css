@@ -11,178 +11,88 @@ body{
   padding-top: 1%;
   padding-bottom: 1%;
 }
-#title{ /*title in header */
-  padding:2%;
+#title{// /*title in header */
+  padding:5%;
   color: #00bfff	;
   padding-left: 3%;
   font-size: 30px;
 }
-#title:hover{
-  color:navy;
-}
-.budget{/*iframe box */
-  margin-top:5%;
-  display:block;
-  margin-left:auto;
-  margin-right:auto;
-  margin-bottom: -10%;
-  color:#00bfff;
-  background-color: white;
+.textbox,.btns{ /* input and output boxes along with encrypt and decrypt buttons */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius:2%;
+  border:none;
   width:50%;
-  height:500px;
-  border-radius:5px;
+  font-size:20px;
 }
 
-.budget iframe{/*iframe container */
-  width:100%;
-  height:100%;
-  border: none;
-}
-.content{/*iframe container */
-  background-color: white;
-  border-radius: 2%;
-  color:#00bfff;
+.btns{ /* encrypt/decrypt buttons */
+  margin-bottom:2%;
+  background-color: #00bfff	;
+  font-size:25px;
+  color:white;
 
 
 }
-.summary{
-  float:right;
-  position: fixed;
-}
-.content button{
-  border-radius: 2%;
-  border: none;
-  background-color:#00bfff;
-  color: white;
-  margin-top: 2%;
-  margin-bottom: 2%;
-  margin-left: 2%;
-  font-size: 20px;
-  width:30%;
+.btns:hover{ /* hover over encrypt/decrypt buttons */
+  background-color: #24a0ed;
 
 }
-.content button:hover{
-  background-color: navy;
-}
-
-.content h4,input{
-  margin-left: 2%;
-  width:30%;
-
-
-}
-.content input{
-  display: block;
-  background-color:
-  border: none;
-  border-radius: 2%;
-  background-color:rgb(245,245,245);
-}
-
-
-.dropbtn {
-
-  background-color: #00bfff;
-  min-width: 100%;
-  color: white;
-  padding: 5%;
-  border: none;
-  transition-duration: 1s;
-}
-.dropbtn:hover{
-  background-color:navy;
-  transition-duration: 1s;
-  cursor: pointer;
-
-}
-/* The container <div> - needed to position the dropdown content */
-.dropdown {
-
-  display:block;
-  margin-bottom:-3%;
-  margin-left:auto;
-  margin-right:auto;
-  width:50%;
-  transition-duration: 1s;
-}
-
-
-/* Dropdown Content (Hidden by Default) */
-.dropdown-content {
-  transition-duration: 1s;
-  display: none;
-  position: absolute;
-  background-color: white;
-  min-width: 100%;
-}
-
-/* Links inside the dropdown */
-.dropdown-content h4 {
-  transition-duration: 1s;
-  color:  #00bfff;
-  padding: 5%;
-  text-decoration: none;
-  display: block;
-}
-
-/* Change color of dropdown links on hover */
-.dropdown-content h4:hover {
-  background-color: #ddd;
-  transition-duration: 1s;
-  cursor: pointer;
-
-}
-
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {
-  display: block;
-  transition-duration: 1s;
-  cursor: pointer;
-
-}
-
-/* removes arrows in input boxes */
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-/* Firefox */
-input[type=number] {
-  -moz-appearance: textfield;
-}
-
-/*submit button to add all values and display them  */
-#submit{
-
-  border: none;
-  background-color:#00bfff;
-  color: white;
-  display:block;
-  margin-left:auto;
-  margin-right:auto;
-  font-size: 50px;
-  border-radius: 50%;
-  margin-bottom: 10%;
-  position: absolute;
-
-}
-
-#submit:hover{
-  background-color: navy;
-}
-
 .footer { /* footer section */
-  position: fixed;
-  left: 0;
-  top: auto;
-  bottom: 0;
-  width: 100%;
-  background-color: #DCDCDC	;
-  color: white;
+   position: fixed;
+   left: 0;
+   top: auto;
+   bottom: 0;
+   width: 100%;
+   background-color: #DCDCDC	;
+   color: white;
+   padding-left:2%;
+
 }
 #gh{ /* github icon */
   width:50px;
   height:50px;
+}
+#num{
+  margin-left: 50%;
+  border-top: 2%;
+  color: #00bfff	;
+  margin-bottom: 10%;
+  visibility: hidden;
+}
+.change{
+  background: none;
+  border: none;
+  font-size: 24px;
+  margin-bottom: 5px;
+  color: #00bfff	;
+}
+.change:hover{
+  color: navy;
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: '';
+}
+#selector{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  width:50%;
+  top: 14px;
+  right: 10px;
+  background-color: #00bfff;
+  border: none;
+  font-size: 20px;
+  color: white;
+}
+
+
 }

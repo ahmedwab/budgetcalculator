@@ -4,40 +4,51 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="stylesheet.css">
-    <script src="budget.js" charset="utf-8"></script>
-    <title>Budget Calculator</title>
+    <script src="encrypt.js"></script>
+    <title> Classic Ciphers</title>
   </head>
   <body>
     <div class="header">
-    <a href="index.html">  <h3 id="title"> Budget Calculator</h3></a>
+      <h3 id="title"> Classic Ciphers</h3>
     </div>
-
-
+    <div id ="controller">
       <br>
-      <div class="dropdown">
-        <button class="dropbtn"><h4 id="dropb">Total Income</h4></button>
-        <div class="dropdown-content">
-          <h4 onclick="dropdown('Total Income')">Total Income </h4>
-          <h4 onclick="dropdown('Living Expenses')">Living Expenses </h4>
-          <h4 onclick="dropdown('Transportation')">Transportation </h4>
-          <h4 onclick="dropdown('Child Care')">Child Care </h4>
-          <h4 onclick="dropdown('Health Care')">Health Care </h4>
-          <h4 onclick="dropdown('Financial')">Financial </h4>
-          <h4 onclick="dropdown('Leisure')">Leisure </h4>
 
-        </div>
+      <div>
+
+          <select name="ciphers" id="selector" class="selector" onchange="selecting()">
+              <option value="select-cipher">Select cipher:</option>
+              <option value="Atbash">Atbash Cipher</option>
+              <option value="Caesar">Caesar's cipher</option>
+              <option value="ROT13">ROT13 cipher</option>
+
+
+          </select>
+      <textarea name="input" id="input" rows="8" cols="80" class="textbox" placeholder="Write a message to get encrypt"  ></textarea>
+      <button type="button" name="encrypt" onclick="encrypt()" class="btns">Encrypt</button>
+      <textarea name="output"  id="output" is="output" rows="8" cols="80" class="textbox" placeholder="Write a message to decrypt"></textarea>
+      <button type="button" name="decrypt" onclick="decrypt()" class="btns">Decrypt</button>
+      <div id="num"><button class="change" onclick="changenum(1)">+ </button><h2 id="val">+13</h2>  <button class="change" onclick="changenum(2)"> - </button></div>
+
+
       </div>
-
-      <div class="budget">
-        <iframe src="total_income.html" id="exp"></iframe>
-        <button type="button" id="submit" onclick=submit()>Submit</button>
-      </div>
-
-
-
-
-    <div class="footer">
-      <a href="https://github.com/ahmedwab"><img src="images/github.png" alt="Github Profile(ahmedwab)" id="gh"></a>
     </div>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <!-- footer-ad -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-1799973444580476"
+       data-ad-slot="9961124734"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+
+  <div class="footer">
+    <a href="https://github.com/ahmedwab"><img src="images/github.png" alt="Github Profile(ahmedwab)" id="gh"></a>
+  </div>
+
   </body>
+
 </html>
