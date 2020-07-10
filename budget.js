@@ -267,6 +267,9 @@ function submit(){
   else if(expenses==0 ){
     window.alert("You did not report any expenses!")
   }
+  else if(total<0 ){
+    window.alert("Your expenses are more than your income!")
+  }
   else{
   var page=document.getElementById('options');
   page.style.visibility='hidden';
@@ -286,7 +289,7 @@ function submit(){
   display.style.visibility='visible';
 
 
-  document.getElementById('funds').innerHTML="Total Available Funds: "+total;
+  document.getElementById('funds').innerHTML="Total Available Monthly Funds: "+total;
 
   loadcharts();
   }
@@ -321,7 +324,8 @@ function loadcharts(){
            ['Financial',  values[3]],
            ['Child Care', values[4]],
            ['Health Care',    values[5]],
-           ['Leisure',    values[6]]
+           ['Leisure',    values[6]],
+           ['Money Available',    total]
 
          ]);
 
