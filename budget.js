@@ -330,7 +330,7 @@ function loadcharts(){
          ]);
 
          var options = {
-           title: 'Monthly Expenses',
+           title: 'Monthly Funds Distribution',
            is3D: true,
            backgroundColor: 'rgb(245,245,245)',
          };
