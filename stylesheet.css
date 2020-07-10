@@ -1,0 +1,145 @@
+body{
+  background-color:rgb(245,245,245);
+}
+
+.header{ /*header box */
+
+  position:relative;
+  width:100%;
+  background-color:white;
+  height:10%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
+#title{ /*title in header */
+  padding:2%;
+  color: #00bfff	;
+  padding-left: 3%;
+  font-size: 30px;
+}
+#title:hover{
+  color:navy;
+  text-decoration: none;
+}
+
+
+.options{
+  margin-bottom: 10%;
+}
+
+
+
+
+.options input[type=button]{
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+  margin-bottom: 1%;
+  background-color: #00bfff;
+  border: none;
+  border-radius: 5px;
+  width:50%;
+  font-size: 25px;
+  color: white;
+  padding-top: 0.5%;
+  padding-bottom: 0.5%;
+}
+
+
+.content{/*container */
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+  margin-bottom: 1%;
+  width:50%;
+  height:0px;
+  visibility: hidden;
+  background-color: white;
+  border-radius: 2%;
+  color:#00bfff;
+
+
+}
+.content button{
+  border-radius: 2%;
+  border: none;
+  background-color:#00bfff;
+  color: white;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  margin-left: 2%;
+  font-size: 20px;
+  width:30%;
+
+}
+.content button:active{
+  background-color: navy;
+}
+#submit{
+  width:25%;
+  background-color: white;
+  color:#00bfff;
+}
+#submit:active{
+  background-color: navy;
+  color:white;
+
+}
+
+.content h4,input{
+  margin-left: 2%;
+  width:30%;
+
+
+}
+.content input{
+  display: block;
+    border: none;
+  border-radius: 2%;
+  background-color:rgb(245,245,245);
+}
+
+
+/* removes arrows in input boxes */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+#summary{
+  visibility: hidden;
+}
+
+
+#funds, #summary_title{
+  text-align:left;
+  margin-left: 25%;
+  color:#00bfff;
+  margin-bottom: 5%;
+}
+.chart{
+
+  background-color:rgb(245,245,245);
+  margin-left: auto;
+  margin-right: auto;
+}
+.footer { /* footer section */
+   position: fixed;
+   left: 0;
+   top: auto;
+   bottom: 0;
+   width: 100%;
+   background-color: #DCDCDC	;
+   color: white;
+   padding-left:2%;
+
+}
+#gh{ /* github icon */
+  width:50px;
+  height:50px;
+}
