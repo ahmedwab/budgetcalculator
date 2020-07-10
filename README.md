@@ -7,9 +7,9 @@ BudgetCalculator is a a web page developed using JavaScript that accepts user in
 
  [Website](https://ahmedwab.github.io/budgetcalculator/) https://ahmedwab.github.io/budgetcalculator/
 
-```bash
+
 <img src="images/Web-shot.png">
-```
+
 
 ## Contributing
 Pull requests are welcome.For any structural or scripting changes, please open request to do so.
