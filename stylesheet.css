@@ -17,20 +17,20 @@ body{
   padding-left: 3%;
   font-size: 30px;
 }
-#title:hover{
+#title:hover{ /*title in header:hovered */
   color:navy;
   text-decoration: none;
 }
 
 
-.options{
+.options{/*options to select income or expense */
   margin-bottom: 10%;
 }
 
 
 
 
-.options input[type=button]{
+.options input[type=button]{ /*button options to select income or expense */
   display:block;
   margin-left:auto;
   margin-right:auto;
@@ -46,7 +46,7 @@ body{
 }
 
 
-.content{/*container */
+.content{/*container of income, expense*/
   display:block;
   margin-left:auto;
   margin-right:auto;
@@ -60,7 +60,7 @@ body{
 
 
 }
-.content button{
+.content button{ /*add button found in each container*/
   border-radius: 2%;
   border: none;
   background-color:#00bfff;
@@ -73,31 +73,31 @@ body{
   width:30%;
 
 }
-.content button:active{
+.content button:active{/*add button when clicked */
   background-color: navy;
 }
-.content select{
+.content select{ /*selector option to choose time period for income, expense*/
   margin-top: 2%;
   margin-left: 50%;
 }
-#submit{
+#submit{/*submit button to take you to summary page*/
   width:25%;
   background-color: white;
   color:#00bfff;
 }
-#submit:active{
+#submit:active{ /*submit when clicked*/
   background-color: navy;
   color:white;
 
 }
 
-.content h4,input{
+.content h4,input{ /*h4 and input containers in each content box*/
   margin-left: 2%;
   width:30%;
 
 
 }
-.content input{
+.content input{/*input containers in each content box*/
   display: block;
     border: none;
   border-radius: 2%;
@@ -105,7 +105,7 @@ body{
 }
 
 
-/* removes arrows in input boxes */
+  /* removes arrows in input boxes */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -116,18 +116,20 @@ input::-webkit-inner-spin-button {
 input[type=number] {
   -moz-appearance: textfield;
 }
+
+  /* summary page(div) */
 #summary{
   visibility: hidden;
 }
 
 
-#funds, #summary_title{
+#funds, #summary_title{  /* summary title and funds text*/
   text-align:left;
   margin-left: 25%;
   color:#00bfff;
   margin-bottom: 5%;
 }
-.chart{
+.chart{ /* summary charts*/
 
   background-color:rgb(245,245,245);
   margin-left: auto;

@@ -1,32 +1,47 @@
+<!--
+Author: https://github.com/ahmedwab
+Description: This webpage is a one time use to calculate your budget based on monthly figures.
+The user inputs his income and is presented a variety of options for his income sources.
+Furthermore, the user is able to input his expenses that are then converted to monthly expenses.
+The webpage uses bootstrap and a stylesheet for the visual layout.
+Google charts are also used to present visuals of the user's budget at the summary page.
+
+
+
+-->
+
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="stylesheet.css">
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> <!-- Bootstrap -->
+    <link rel="stylesheet" href="stylesheet.css"> <!-- Stylesheet -->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script> <!-- Google charts -->
     <script src="budget.js" charset="utf-8"></script>
     <title>Budget Calculator</title>
   </head>
+
   <body>
     <div class="header">
-    <a href="index.html">  <h3 id="title"> Budget Calculator</h3></a>
+    <a href="index.html">  <h3 id="title"> Budget Calculator</h3></a> <!-- title displayed -->
     </div>
 
 
       <br>
-      <div class="options" id="options">
+      <div class="options" id="options"> <!-- div that carries all the income and expenses options -->
 
-        <div id="ti_option">
+        <div id="ti_option"> <!-- Total income option where user inputs income figures -->
           <input type="button" value="Total Income" onclick="select_element('ti_content')" id="ti_button">
           <div class="content" id="ti_content">
-            <select name="period" id="ti_period">
+            <select name="period" id="ti_period"> <!-- Selector for time period -->
                 <option value="1">Daily</option>
                 <option value="2">Weekly</option>
                 <option value="3">Bi-Weekly</option>
                 <option value="4">Monthly</option>
                 <option value="5">Yearly</option>
             </select>
+            <!-- income values -->
             <h4>Employment Income</h4>
               <input type="number" id="mi1" value="0">
             <h4>Investment Income</h4>
@@ -42,16 +57,17 @@
           </div>
         </div>
 
-        <div id="le_option">
+        <div id="le_option"> <!-- Living expenses option where user inputs living expenses-->
           <input type="button" value="Living Expenses" onclick="select_element('le_content')" id="le_button">
           <div class="content" id="le_content">
-            <select name="period" id="le_period">
+            <select name="period" id="le_period"> <!-- Selector for time period -->
                 <option value="1">Daily</option>
                 <option value="2">Weekly</option>
                 <option value="3">Bi-Weekly</option>
                 <option value="4">Monthly</option>
                 <option value="5">Yearly</option>
             </select>
+            <!-- living expenses values -->
             <h4>Mortgage/Rent</h4>
               <input type="number" id="le1" value="0">
             <h4>Maintenance</h4>
@@ -71,16 +87,17 @@
           </div>
         </div>
 
-        <div id="transportation">
+        <div id="transportation"> <!-- transportation expenses option where user inputs transportation expenses-->
           <input type="button" value="Transportation" onclick="select_element('t_content')" id="t_button">
           <div class="content" id="t_content">
-            <select name="period" id="t_period">
+            <select name="period" id="t_period"> <!-- Selector for time period -->
                 <option value="1">Daily</option>
                 <option value="2">Weekly</option>
                 <option value="3">Bi-Weekly</option>
                 <option value="4">Monthly</option>
                 <option value="5">Yearly</option>
             </select>
+            <!-- transportation values -->
             <h4>Vehicle</h4>
               <input type="number" id="t1" value="0">
             <h4>Gas</h4>
@@ -94,16 +111,17 @@
           </div>
         </div>
 
-        <div id="financial">
+        <div id="financial"> <!-- Financial expenses option where user inputs financial expenses-->
           <input type="button" value="Financial" onclick="select_element('f_content')" id="f_button">
           <div class="content" id="f_content">
-            <select name="period" id="f_period">
+            <select name="period" id="f_period"> <!-- Selector for time period -->
                 <option value="1">Daily</option>
                 <option value="2">Weekly</option>
                 <option value="3">Bi-Weekly</option>
                 <option value="4">Monthly</option>
                 <option value="5">Yearly</option>
             </select>
+            <!-- financial values -->
             <h4>TFSA contributions</h4>
               <input type="number" id="f1" value="0">
             <h4>RESP contributions</h4>
@@ -124,16 +142,17 @@
           </div>
         </div>
 
-        <div id="childcare">
+        <div id="childcare"> <!-- Child Care expenses option where user inputs childcare expenses-->
           <input type="button" value="Child Care" onclick="select_element('c_content')" id="c_button">
           <div class="content" id="c_content">
-            <select name="period" id="c_period">
+            <select name="period" id="c_period"> <!-- Selector for time period -->
                 <option value="1">Daily</option>
                 <option value="2">Weekly</option>
                 <option value="3">Bi-Weekly</option>
                 <option value="4">Monthly</option>
                 <option value="5">Yearly</option>
             </select>
+            <!-- childcare values -->
             <h4>School/Day care</h4>
               <input type="number" id="c1" value="0">
             <h4>Activity/Clubs</h4>
@@ -146,16 +165,17 @@
           </div>
         </div>
 
-          <div id="healthcare">
+          <div id="healthcare"> <!-- Health Care expenses option where user inputs healthcare expenses-->
             <input type="button" value="Health Care" onclick="select_element('h_content')" id="h_button">
             <div class="content" id="h_content">
-              <select name="period" id="h_period">
+              <select name="period" id="h_period"> <!-- Selector for time period -->
                   <option value="1">Daily</option>
                   <option value="2">Weekly</option>
                   <option value="3">Bi-Weekly</option>
                   <option value="4">Monthly</option>
                   <option value="5">Yearly</option>
               </select>
+              <!-- healthcare values -->
               <h4>Doctor Appointments</h4>
                 <input type="number" id="h1" value="0">
               <h4>Prescription Drugs</h4>
@@ -172,16 +192,17 @@
             </div>
           </div>
 
-            <div id="leisure">
+            <div id="leisure"> <!-- Leisure  expenses option where user inputs leisure expenses-->
               <input type="button" value="Leisure" onclick="select_element('l_content')" id="l_button">
               <div class="content" id="l_content">
-                <select name="period" id="l_period">
+                <select name="period" id="l_period"> <!-- Selector for time period -->
                     <option value="1">Daily</option>
                     <option value="2">Weekly</option>
                     <option value="3">Bi-Weekly</option>
                     <option value="4">Monthly</option>
                     <option value="5">Yearly</option>
                 </select>
+                <!-- leisure values -->
                 <h4>Club Memberships</h4>
                   <input type="number" id="l1" value="0">
                 <h4>Subscriptions</h4>
@@ -205,29 +226,19 @@
           </div>
       </div>
 
+
+  <!-- Summary page where it displays all the summary information including graphs-->
+
       <div id="summary">
         <h4 id="summary_title"> Summary:</h4>
-        <div id="income_chart" style="width: 900px; height: 500px;" class="chart"></div>
-        <div id="expenses_chart" style="width: 900px; height: 500px;" class="chart"></div>
-        <h4 id ="funds"> </h4>
+        <div id="income_chart" style="width: 900px; height: 500px;" class="chart"></div>   <!-- Donut chart that displays income distribution-->
+        <div id="expenses_chart" style="width: 900px; height: 500px;" class="chart"></div> <!-- Pie chart that displays expenses distribution-->
+        <h4 id ="funds"> </h4> <!-- Text that prompts the amount of available funds in each month-->
 
       </div>
 
 
-
-<script type="text/javascript">
-function change()
-{
-document.getElementById("random").value="Close Curtain";
-}
-</script>
-
-
-
-
-
-
-
+      <!-- Footer section that displays more information about the project-->
 
     <div class="footer">
       <a href="https://github.com/ahmedwab"><img src="images/github.png" alt="Github Profile(ahmedwab)" id="gh"></a>

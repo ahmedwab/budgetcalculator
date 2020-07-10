@@ -30,12 +30,15 @@ function add_element(element){
 }
 
 //variables
+//income variables array is for every income variable
+//values[0] is for the income, while the rest is for each respective epense
 
 var income=[0,0,0,0,0];
 var values=[0,0,0,0,0,0,0];
 var total=0;
 
-
+//takes a value and multiplies by option 1,2,3,4,5 that stand for daily, weekly, bi weekly, monthly, Yearly
+//returns a result of the expense or income adjusted to the monthly status
 function select_option(value,option){
   var select=document.getElementById(option);
   value=parseFloat(value);
@@ -106,6 +109,8 @@ document.getElementById('t_button').value="Transportation \u2713";
 remove_element('t_content');
 
 }
+
+
 function addf(){ //function for financial
   value1=parseFloat(document.getElementById('f1').value);
   value2=parseFloat(document.getElementById('f2').value);
@@ -123,6 +128,8 @@ remove_element('f_content');
 
 
 }
+
+
 function addc(){ //function for childcare
   value1=parseFloat(document.getElementById('c1').value);
   value2=parseFloat(document.getElementById('c2').value);
@@ -134,7 +141,9 @@ function addc(){ //function for childcare
   document.getElementById('c_button').value="Child Care \u2713";
   remove_element('c_content');
 }
-function addh(){ //function for financial
+
+
+function addh(){ //function for health care
   value1=parseFloat(document.getElementById('h1').value);
   value2=parseFloat(document.getElementById('h2').value);
   value3=parseFloat(document.getElementById('h3').value);
@@ -147,6 +156,8 @@ function addh(){ //function for financial
   document.getElementById('h_button').value="Health Care \u2713";
   remove_element('h_content');
 }
+
+
 function addl(){ //function for leisure
   value1=parseFloat(document.getElementById('l1').value);
   value2=parseFloat(document.getElementById('l2').value);
@@ -159,13 +170,13 @@ function addl(){ //function for leisure
   values[6]=value1+value2+value3+value4+value5+value6;
   values[6]=select_option(values[6],'l_period');
 
-console.log(income);
-console.log(values);
 document.getElementById('l_button').value="Leisure \u2713";
 remove_element('l_content');
 }
 
-
+//hides all content and displays the summary div
+//precondition: user inputted an income and user reported an expenses
+//postcondition page of two google graphs that show the budget summary
 function submit(){
 
   var expenses=0.0;
@@ -200,6 +211,14 @@ function submit(){
 
 
   document.getElementById('funds').innerHTML="Total Available Funds: "+total;
+
+  loadcharts();
+  }
+}
+
+
+//function to load the pie and donut Google charts
+function loadcharts(){
 
   google.charts.load("current", {packages:["corechart"]});
        google.charts.setOnLoadCallback(drawChart);
@@ -245,5 +264,3 @@ function submit(){
         chart.draw(data, options);
       }
     }
-
-}
