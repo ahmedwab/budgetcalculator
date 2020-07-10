@@ -105,13 +105,14 @@ function add_element(element){
 //income variables array is for every income variable
 //values[0] is for the income, while the rest is for each respective epense
 
-var income=[0.0,0.0,0.0,0.0,0.0];
+var income=[0.0,0.0,0.0,0.0,0.001];
 var values=[0.0,0.0,0.0,0.0,0.0,0.0,0.0];
 var total=0.0;
 
 //takes a value and multiplies by option 1,2,3,4,5 that stand for daily, weekly, bi weekly, monthly, Yearly
 //returns a result of the expense or income adjusted to the monthly status
 function select_option(value,option){
+
   var select=document.getElementById(option);
   value=parseFloat(value);
 
@@ -128,7 +129,7 @@ function select_option(value,option){
   if (select.value==4) {
     return value;
   }
-  if (select.value==4) {
+  if (select.value==5) {
     return +value/12.00;
   }
   console.log(value)
