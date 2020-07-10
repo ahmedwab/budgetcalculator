@@ -184,11 +184,13 @@ function submit(){
   for(i=1;i<7;i++){
     expenses+=values[i];
   }
+
+  total=values[0];
   total=total-expenses;
   if(values[0]==0  ){
     window.alert("You did not report any income!")
   }
-  if(expenses==0 ){
+  else if(expenses==0 ){
     window.alert("You did not report any expenses!")
   }
   else{
@@ -207,7 +209,6 @@ function submit(){
   var display=document.getElementById('summary')
   display.style.marginTop='-10%';
   display.style.visibility='visible';
-  total=values[0];
 
 
   document.getElementById('funds').innerHTML="Total Available Funds: "+total;
