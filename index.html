@@ -4,51 +4,184 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="stylesheet.css">
-    <script src="encrypt.js"></script>
-    <title> Classic Ciphers</title>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="budget.js" charset="utf-8"></script>
+    <title>Budget Calculator</title>
   </head>
   <body>
     <div class="header">
-      <h3 id="title"> Classic Ciphers</h3>
+    <a href="index.html">  <h3 id="title"> Budget Calculator</h3></a>
     </div>
-    <div id ="controller">
+
+
       <br>
+      <div class="options" id="options">
 
-      <div>
+        <div id="ti_option">
+          <input type="button" value="Total Income" onclick="select_element('ti_content')" id="ti_button">
+          <div class="content" id="ti_content">
+            <h4>Monthly Income</h4>
+              <input type="number" id="mi1" value="0">
+            <h4>Investment Income</h4>
+              <input type="number" id="mi2" value="0">
+            <h4>Rental Income</h4>
+              <input type="number" id="mi3" value="0">
+            <h4>Tax Refund</h4>
+              <input type="number" id="mi4" value="0">
+            <h4>Other</h4>
+              <input type="number" id="mi5" value="0">
+            <br>
+            <button onclick="addti()">add</button>
+          </div>
+        </div>
 
-          <select name="ciphers" id="selector" class="selector" onchange="selecting()">
-              <option value="select-cipher">Select cipher:</option>
-              <option value="Atbash">Atbash Cipher</option>
-              <option value="Caesar">Caesar's cipher</option>
-              <option value="ROT13">ROT13 cipher</option>
+        <div id="le_option">
+          <input type="button" value="Living Expenses" onclick="select_element('le_content')" id="le_button">
+          <div class="content" id="le_content">
+            <h4>Mortgage/Rent</h4>
+              <input type="number" id="le1" value="0">
+            <h4>Maintenance</h4>
+              <input type="number" id="le2" value="0">
+            <h4>Utilities</h4>
+              <input type="number" id="le3" value="0">
+            <h4>Phone/TV/Internet</h4>
+              <input type="number" id="le4" value="0">
+            <h4>Groceries</h4>
+              <input type="number" id="le5" value="0">
+            <h4>Clothes</h4>
+              <input type="number" id="le6" value="0">
+            <h4>Other</h4>
+              <input type="number" id="le7" value="0">
+            <br>
+            <button onclick="addle()">add</button>
+          </div>
+        </div>
+
+        <div id="transportation">
+          <input type="button" value="Transportation" onclick="select_element('t_content')" id="t_button">
+          <div class="content" id="t_content">
+            <h4>Vehicle</h4>
+              <input type="number" id="t1" value="0">
+            <h4>Gas</h4>
+              <input type="number" id="t2" value="0">
+            <h4>Transit Costs</h4>
+              <input type="number" id="t3" value="0">
+            <h4>Other</h4>
+              <input type="number" id="t4" value="0">
+            <br>
+            <button onclick="addt()">add </button>
+          </div>
+        </div>
+
+        <div id="financial">
+          <input type="button" value="Financial" onclick="select_element('f_content')" id="f_button">
+          <div class="content" id="f_content">
+            <h4>TFSA contributions</h4>
+              <input type="number" id="f1" value="0">
+            <h4>RESP contributions</h4>
+              <input type="number" id="f2" value="0">
+            <h4>RRSP contributions</h4>
+              <input type="number" id="f3" value="0">
+            <h4>Credit Card Payments</h4>
+              <input type="number" id="f4" value="0">
+            <h4>Loan Payments</h4>
+              <input type="number" id="f5" value="0">
+            <h4>Insurance</h4>
+              <input type="number" id="f6" value="0">
+            <h4>Other</h4>
+              <input type="number" id="f7" value="0">
+
+            <br>
+            <button onclick="addf()">add</button>
+          </div>
+        </div>
+
+        <div id="childcare">
+          <input type="button" value="Child Care" onclick="select_element('c_content')" id="c_button">
+          <div class="content" id="c_content">
+            <h4>School/Day care</h4>
+              <input type="number" id="c1" value="0">
+            <h4>Activity/Clubs</h4>
+              <input type="number" id="c2" value="0">
+            <h4>Other</h4>
+              <input type="number" id="c3" value="0">
+
+            <br>
+            <button onclick="addc()">add</button>
+          </div>
+        </div>
+
+          <div id="healthcare">
+            <input type="button" value="Health Care" onclick="select_element('h_content')" id="h_button">
+            <div class="content" id="h_content">
+              <h4>Doctor Appointments</h4>
+                <input type="number" id="h1" value="0">
+              <h4>Prescription Drugs</h4>
+                <input type="number" id="h2" value="0">
+              <h4>vision</h4>
+                <input type="number" id="h3" value="0">
+              <h4>Dental</h4>
+                <input type="number" id="h4" value="0">
+              <h4>Other</h4>
+                <input type="number" id="h5" value="0">
+
+              <br>
+              <button onclick="addh()">add</button>
+            </div>
+          </div>
+
+            <div id="leisure">
+              <input type="button" value="Leisure" onclick="select_element('l_content')" id="l_button">
+              <div class="content" id="l_content">
+                <h4>Club Memberships</h4>
+                  <input type="number" id="l1" value="0">
+                <h4>Subscriptions</h4>
+                  <input type="number" id="l2" value="0">
+                <h4>Travel</h4>
+                  <input type="number" id="l3" value="0">
+                <h4>Dining out</h4>
+                  <input type="number" id="l4" value="0">
+                <h4>Pets</h4>
+                  <input type="number" id="l5" value="0">
+                <h4>Other</h4>
+                  <input type="number" id="l6" value="0">
 
 
-          </select>
-      <textarea name="input" id="input" rows="8" cols="80" class="textbox" placeholder="Write a message to get encrypt"  ></textarea>
-      <button type="button" name="encrypt" onclick="encrypt()" class="btns">Encrypt</button>
-      <textarea name="output"  id="output" is="output" rows="8" cols="80" class="textbox" placeholder="Write a message to decrypt"></textarea>
-      <button type="button" name="decrypt" onclick="decrypt()" class="btns">Decrypt</button>
-      <div id="num"><button class="change" onclick="changenum(1)">+ </button><h2 id="val">+13</h2>  <button class="change" onclick="changenum(2)"> - </button></div>
+                <br>
+                <button onclick="addl()">add</button>
+              </div>
 
+              <input type="button" value="submit" onclick="submit()" id="submit">
+
+          </div>
+      </div>
+
+      <div id="summary">
+        <h4 id="summary_title"> Summary:</h4>
+        <div id="income_chart" style="width: 900px; height: 500px;" class="chart"></div>
+        <div id="expenses_chart" style="width: 900px; height: 500px;" class="chart"></div>
+        <h4 id ="funds"> </h4>
 
       </div>
+
+
+
+<script type="text/javascript">
+function change()
+{
+document.getElementById("random").value="Close Curtain";
+}
+</script>
+
+
+
+
+
+
+
+
+    <div class="footer">
+      <a href="https://github.com/ahmedwab"><img src="images/github.png" alt="Github Profile(ahmedwab)" id="gh"></a>
     </div>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-  <!-- footer-ad -->
-  <ins class="adsbygoogle"
-       style="display:block"
-       data-ad-client="ca-pub-1799973444580476"
-       data-ad-slot="9961124734"
-       data-ad-format="auto"
-       data-full-width-responsive="true"></ins>
-  <script>
-       (adsbygoogle = window.adsbygoogle || []).push({});
-  </script>
-
-  <div class="footer">
-    <a href="https://github.com/ahmedwab"><img src="images/github.png" alt="Github Profile(ahmedwab)" id="gh"></a>
-  </div>
-
   </body>
-
 </html>
