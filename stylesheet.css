@@ -147,7 +147,7 @@ input[type=number] {
 
 
 }
-#back_button:hover{
+#back_button:hover,#forward_button:hover{
   color:navy;
 
 
