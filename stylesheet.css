@@ -129,6 +129,31 @@ input[type=number] {
   color:#00bfff;
   margin-bottom: 5%;
 }
+#forward_button{
+  border:none;
+  background-color: rgb(245,245,245);
+  color: #00bfff;
+  font-size: 20px;
+  margin-left:50%;
+  visibility: hidden;
+}
+
+#back_button{
+  border:none;
+  background-color: rgb(245,245,245);
+  color: #00bfff;
+  font-size: 30px;
+  width:10%;
+
+
+}
+#back_button:hover{
+  color:navy;
+
+
+
+}
+
 .chart{ /* summary charts*/
 
   background-color:rgb(245,245,245);

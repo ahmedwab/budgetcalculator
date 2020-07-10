@@ -1,5 +1,77 @@
 //selectors to display and not display content
 
+
+function select_ti(){
+  select_element('ti_content');
+  remove_element('le_content');
+  remove_element('t_content');
+  remove_element('f_content');
+  remove_element('c_content');
+  remove_element('h_content');
+  remove_element('l_content');
+
+}
+function select_le(){
+  select_element('le_content');
+  remove_element('ti_content');
+  remove_element('t_content');
+  remove_element('f_content');
+  remove_element('c_content');
+  remove_element('h_content');
+  remove_element('l_content');
+
+}
+function select_t(){
+  select_element('t_content');
+  remove_element('ti_content');
+  remove_element('le_content');
+  remove_element('f_content');
+  remove_element('c_content');
+  remove_element('h_content');
+  remove_element('l_content');
+
+}
+function select_f(){
+  select_element('f_content');
+  remove_element('ti_content');
+  remove_element('le_content');
+  remove_element('t_content');
+  remove_element('c_content');
+  remove_element('h_content');
+  remove_element('l_content');
+
+}
+function select_c(){
+  select_element('c_content');
+  remove_element('ti_content');
+  remove_element('le_content');
+  remove_element('t_content');
+  remove_element('f_content');
+  remove_element('h_content');
+  remove_element('l_content');
+
+}
+function select_h(){
+  select_element('h_content');
+  remove_element('ti_content');
+  remove_element('le_content');
+  remove_element('t_content');
+  remove_element('f_content');
+  remove_element('c_content');
+  remove_element('l_content');
+
+}
+function select_l(){
+  select_element('l_content');
+  remove_element('ti_content');
+  remove_element('le_content');
+  remove_element('t_content');
+  remove_element('f_content');
+  remove_element('c_content');
+  remove_element('h_content');
+
+}
+
 //selector to display of hidden and hide if displayed
 function select_element(content){
   var element=document.getElementById(content);
@@ -33,15 +105,16 @@ function add_element(element){
 //income variables array is for every income variable
 //values[0] is for the income, while the rest is for each respective epense
 
-var income=[0,0,0,0,0];
-var values=[0,0,0,0,0,0,0];
-var total=0;
+var income=[0.0,0.0,0.0,0.0,0.0];
+var values=[0.0,0.0,0.0,0.0,0.0,0.0,0.0];
+var total=0.0;
 
 //takes a value and multiplies by option 1,2,3,4,5 that stand for daily, weekly, bi weekly, monthly, Yearly
 //returns a result of the expense or income adjusted to the monthly status
 function select_option(value,option){
   var select=document.getElementById(option);
   value=parseFloat(value);
+
 
   if (select.value==1) {
     return value*30.00;
@@ -56,8 +129,9 @@ function select_option(value,option){
     return value;
   }
   if (select.value==4) {
-    return value/12.00;
+    return +value/12.00;
   }
+  console.log(value)
 
 
 
@@ -205,6 +279,7 @@ function submit(){
   remove_element('c_content');
   remove_element('h_content');
   remove_element('l_content');
+  remove_element('forward_button');
 
   var display=document.getElementById('summary')
   display.style.marginTop='-10%';
@@ -215,6 +290,20 @@ function submit(){
 
   loadcharts();
   }
+}
+
+function goback(){
+  var display=document.getElementById('summary')
+  display.style.marginTop='+10%';
+  display.style.visibility='hidden';
+  var page=document.getElementById('options');
+  page.style.visibility='visible';
+  page.style.height='100%';
+  var forward=document.getElementById('forward_button')
+  forward.style.visibility='visible';
+  forward.style.height='100%';
+
+
 }
 
 

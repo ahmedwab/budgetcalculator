@@ -33,7 +33,7 @@ Google charts are also used to present visuals of the user's budget at the summa
       <div class="options" id="options"> <!-- div that carries all the income and expenses options -->
 
         <div id="ti_option"> <!-- Total income option where user inputs income figures -->
-          <input type="button" value="Total Income" onclick="select_element('ti_content')" id="ti_button">
+          <input type="button" value="Total Income" onclick="select_ti()" id="ti_button">
           <div class="content" id="ti_content">
             <select name="period" id="ti_period"> <!-- Selector for time period -->
                 <option value="1">Daily</option>
@@ -59,7 +59,7 @@ Google charts are also used to present visuals of the user's budget at the summa
         </div>
 
         <div id="le_option"> <!-- Living expenses option where user inputs living expenses-->
-          <input type="button" value="Living Expenses" onclick="select_element('le_content')" id="le_button">
+          <input type="button" value="Living Expenses" onclick="select_le()" id="le_button">
           <div class="content" id="le_content">
             <select name="period" id="le_period"> <!-- Selector for time period -->
                 <option value="1">Daily</option>
@@ -89,7 +89,7 @@ Google charts are also used to present visuals of the user's budget at the summa
         </div>
 
         <div id="transportation"> <!-- transportation expenses option where user inputs transportation expenses-->
-          <input type="button" value="Transportation" onclick="select_element('t_content')" id="t_button">
+          <input type="button" value="Transportation" onclick="select_t()" id="t_button">
           <div class="content" id="t_content">
             <select name="period" id="t_period"> <!-- Selector for time period -->
                 <option value="1">Daily</option>
@@ -113,7 +113,7 @@ Google charts are also used to present visuals of the user's budget at the summa
         </div>
 
         <div id="financial"> <!-- Financial expenses option where user inputs financial expenses-->
-          <input type="button" value="Financial" onclick="select_element('f_content')" id="f_button">
+          <input type="button" value="Financial" onclick="select_f()" id="f_button">
           <div class="content" id="f_content">
             <select name="period" id="f_period"> <!-- Selector for time period -->
                 <option value="1">Daily</option>
@@ -144,7 +144,7 @@ Google charts are also used to present visuals of the user's budget at the summa
         </div>
 
         <div id="childcare"> <!-- Child Care expenses option where user inputs childcare expenses-->
-          <input type="button" value="Child Care" onclick="select_element('c_content')" id="c_button">
+          <input type="button" value="Child Care" onclick="select_c()" id="c_button">
           <div class="content" id="c_content">
             <select name="period" id="c_period"> <!-- Selector for time period -->
                 <option value="1">Daily</option>
@@ -167,7 +167,7 @@ Google charts are also used to present visuals of the user's budget at the summa
         </div>
 
           <div id="healthcare"> <!-- Health Care expenses option where user inputs healthcare expenses-->
-            <input type="button" value="Health Care" onclick="select_element('h_content')" id="h_button">
+            <input type="button" value="Health Care" onclick="select_h()" id="h_button">
             <div class="content" id="h_content">
               <select name="period" id="h_period"> <!-- Selector for time period -->
                   <option value="1">Daily</option>
@@ -194,7 +194,7 @@ Google charts are also used to present visuals of the user's budget at the summa
           </div>
 
             <div id="leisure"> <!-- Leisure  expenses option where user inputs leisure expenses-->
-              <input type="button" value="Leisure" onclick="select_element('l_content')" id="l_button">
+              <input type="button" value="Leisure" onclick="select_l()" id="l_button">
               <div class="content" id="l_content">
                 <select name="period" id="l_period"> <!-- Selector for time period -->
                     <option value="1">Daily</option>
@@ -223,14 +223,17 @@ Google charts are also used to present visuals of the user's budget at the summa
               </div>
 
               <input type="button" value="submit" onclick="submit()" id="submit">
+                <input type="button" onclick="submit()" id="forward_button" value="Back to Charts &#11153;">
 
           </div>
       </div>
 
 
+
   <!-- Summary page where it displays all the summary information including graphs-->
 
       <div id="summary">
+        <input type="button" onclick="goback()" id="back_button" value="&#9166;">
         <h4 id="summary_title"> Summary:</h4>
         <div id="income_chart" style="width: 900px; height: 500px;" class="chart"></div>   <!-- Donut chart that displays income distribution-->
         <div id="expenses_chart" style="width: 900px; height: 500px;" class="chart"></div> <!-- Pie chart that displays expenses distribution-->
