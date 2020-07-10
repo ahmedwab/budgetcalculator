@@ -32,4 +32,4 @@ The user can select an option to display information using daily, weekly, bi-wee
 
 
 ## License
-[MIT](https://choosealicense.com/licenses/mit/)
+[MIT](/LICENSE)
