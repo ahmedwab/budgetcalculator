@@ -16,6 +16,7 @@ body{
   color: #00bfff	;
   padding-left: 3%;
   font-size: 30px;
+  font-family: "Arial Black";
 }
 #title:hover{ /*title in header:hovered */
   color:navy;
