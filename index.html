@@ -36,7 +36,7 @@ Google charts are also used to present visuals of the user's budget at the summa
 
       <br>
       <div class="options" id="options" > <!-- div that carries all the income and expenses options -->
-
+     <div class="income-section" >
         <div id="ti_option" > <!-- Total income option where user inputs income figures -->
           <div id="income-btn" onclick="select_ti()">
            <h1 id="ti_button"> Total Income </h1>
@@ -65,6 +65,7 @@ Google charts are also used to present visuals of the user's budget at the summa
             <br>
             <button onclick="addti()">add</button>
           </div>
+        </div>
         </div>
         <div class="expenses-section" >
         <div id="le_option"> <!-- Living expenses option where user inputs living expenses-->
@@ -270,9 +271,9 @@ Google charts are also used to present visuals of the user's budget at the summa
       <div id="summary">
         <input type="button" onclick="goback()" id="back_button" value="&#9166;">
         <h4 id="summary_title"> Summary:</h4>
-          <div id="income_chart" style="width: 900px; height: 500px;" class="chart"></div>   <!-- Donut chart that displays income distribution-->
-          <div id="expenses_chart" style="width: 900px; height: 500px;" class="chart"></div> <!-- Pie chart that displays expenses distribution-->
         <h4 id ="funds"> </h4> <!-- Text that prompts the amount of available funds in each month-->
+          <div id="income_chart" style="width: 900px; height: 500px;" class="chart"></div>   <!-- Donut chart that displays income distribution-->
+          <div id="expenses_chart" style="width: 900px; height: 500px; border-bottom:2%;" class="chart"></div> <!-- Pie chart that displays expenses distribution-->
 
       </div>
       <!--
