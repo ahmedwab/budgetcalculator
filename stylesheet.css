@@ -4,9 +4,10 @@ body{
 
 
 .header{ /*header box */
+  position: relative;
   background-color:#0a192f;
   padding: 1% 1%;
-  min-width:100%;
+  width:100%;
 
 
 
