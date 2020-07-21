@@ -44,10 +44,10 @@ body{
 
 #income-btn{ /*button options to select income or expense */
   display: block;
-  margin-left: 10%;
+  margin-left: 5%;
   margin-bottom: 1%;
   border-radius: 5px;
-  max-width:80%;
+  max-width:90%;
   font-size: 25px;
   background-color: #00bfff;
   color: white;
@@ -59,7 +59,7 @@ body{
 
 .expense-btn{
   display: block;
-  margin-left: 15%;
+  margin-left: 5%;
   float: left;
   margin-bottom: 1%;
   background-color: #00bfff;
@@ -71,6 +71,7 @@ body{
   text-align: center;
 
 }
+
 
 
 #income-btn:hover, .expense-btn:hover{
@@ -133,14 +134,14 @@ body{
   margin-left: 50%;
 }
 #submit{/*submit button to take you to summary page*/
-  width:70%;
+  width:80%;
   display: block;
-  margin-left: auto;
+  margin-left: 10%;
   margin-right: auto;
   background-color: white;
   background-color:#00bfff;
   color: white;
-  font-size: 30px;
+  font-size: 40px;
   border: none;
 }
 #submit:hover{
@@ -240,4 +241,23 @@ input[type=number] {
 }
 #gh:hover{
     background-color:#52a39e;
+}
+@media only screen and (max-width: 1250px) {
+.expense-btn{
+  margin-left: 10%;
+
+}
+#income-btn{
+  margin-left: 10%;
+  width: 340px;
+}
+#submit{
+  width: 340px;
+  float:left;
+  margin-left: 10%;
+
+
+}
+
+
 }
