@@ -151,7 +151,7 @@ function addti(){ //function for total income
 
 values[0]=income[0]+income[1]+income[2]+income[3]+income[4];
 values[0]=select_option(values[0],'ti_period');
-document.getElementById('ti_button').value="Total Income \u2713";
+document.getElementById('ti_button').innerHTML="Total Income \u2713";
 remove_element('ti_content');
 }
 
@@ -166,7 +166,7 @@ function addle(){ //function for living expenses
 
   values[1]=value1+value2+value3+value4+value5+value6+value7;
   values[1]=select_option(values[1],'le_period');
-  document.getElementById('le_button').value="Living Expenses \u2713";
+  document.getElementById('le_button').innerHTML="Living Expenses \u2713";
    remove_element('le_content');
 }
 
@@ -180,7 +180,7 @@ function addt(){ //function for transportation
 values[2]=value1+value2+value3+value4;
 values[2]=select_option(values[2],'t_period');
 
-document.getElementById('t_button').value="Transportation \u2713";
+document.getElementById('t_button').innerHTML="Transportation \u2713";
 remove_element('t_content');
 
 }
@@ -198,7 +198,7 @@ function addf(){ //function for financial
 values[3]=value1+value2+value3+value4+value5+value6+value7;
 values[3]=select_option(values[3],'f_period');
 
-document.getElementById('f_button').value="Financial \u2713";
+document.getElementById('f_button').innerHTML="Financial \u2713";
 remove_element('f_content');
 
 
@@ -213,7 +213,7 @@ function addc(){ //function for childcare
   values[4]=value1+value2+value3;
   values[4]=select_option(values[4],'c_period');
 
-  document.getElementById('c_button').value="Child Care \u2713";
+  document.getElementById('c_button').innerHTML="Child Care \u2713";
   remove_element('c_content');
 }
 
@@ -228,7 +228,7 @@ function addh(){ //function for health care
   values[5]=value1+value2+value3+value4+value5;
   values[5]=select_option(values[5],'h_period');
 
-  document.getElementById('h_button').value="Health Care \u2713";
+  document.getElementById('h_button').innerHTML="Health Care \u2713";
   remove_element('h_content');
 }
 
@@ -245,7 +245,7 @@ function addl(){ //function for leisure
   values[6]=value1+value2+value3+value4+value5+value6;
   values[6]=select_option(values[6],'l_period');
 
-document.getElementById('l_button').value="Leisure \u2713";
+  document.getElementById('l_button').innerHTML="Leisure \u2713";
 remove_element('l_content');
 }
 

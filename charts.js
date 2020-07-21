@@ -20,7 +20,7 @@ function loadcharts(){
          var options = {
            title: 'Monthly Funds Distribution',
            is3D: true,
-           backgroundColor: 'rgb(245,245,245)',
+           backgroundColor: 'rgb(255,255,255)'
          };
 
          var chart = new google.visualization.PieChart(document.getElementById('expenses_chart'));
@@ -39,7 +39,7 @@ function loadcharts(){
         var options = {
           title: 'Income Distribution',
           pieHole: 0.4,
-          backgroundColor: 'rgb(245,245,245)',
+          backgroundColor: 'rgb(255,255,255)'
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('income_chart'));
