@@ -8,7 +8,7 @@ BudgetCalculator is a a web page developed using JavaScript that accepts user in
  [Website](https://ahmedwab.github.io/budgetcalculator/) https://ahmedwab.github.io/budgetcalculator/
 
 
-<img src="images/ScreenShot.png">
+<img src="images/Screenshot.png">
 
 
 ## Contributing
