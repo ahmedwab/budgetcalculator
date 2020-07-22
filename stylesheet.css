@@ -89,6 +89,7 @@ body{
   display: block;
   margin-left: auto;
   margin-right: auto;
+
 }
 
 
@@ -99,8 +100,8 @@ body{
   display: block;
   margin-left: 5%;
   width:90%;
-  min-height:80%;
-  margin-top: -15%;
+  height:80%;
+  margin-top: -20%;
   margin-bottom: 5%;
   visibility: hidden;
   background-color: white;
@@ -156,6 +157,27 @@ body{
 #submit:active{ /*submit when clicked*/
   background-color:#0a192f;
   color:white;
+
+}
+select{
+  display: block;
+	font-size: 16px;
+	font-family: sans-serif;
+	font-weight: 700;
+	color: white;
+	line-height: 1.3;
+	padding: .6em 1.4em .5em .8em;
+	width: 40%;
+	max-width: 100%;
+	box-sizing: border-box;
+	margin: 0;
+	box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
+	border-radius: .5em;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	appearance: none;
+	background-color: #00bfff;
+
 
 }
 
@@ -272,6 +294,18 @@ font-size: 30px;
 
 
 }
+.content{/*container of income, expense*/
+
+  min-height:80%;
+  margin-top: -50%;
+
+
+
+}
+.content h4{
+  font-size: 15px;
+
+}
 
 
 }
@@ -298,6 +332,18 @@ font-size: 25px;
   float:left;
   margin-left: 3%;
 
+
+}
+.content{/*container of income, expense*/
+
+  min-height:80%;
+  margin-top: -27%;
+
+
+
+}
+.content h4{
+  font-size: 20px;
 
 }
 
@@ -333,6 +379,17 @@ font-size: 100%;
 height:150px;
 width:150px;
 }
+.content{/*container of income, expense*/
 
+  min-height:80%;
+  margin-top: -20%;
+
+
+
+}
+.content h4{
+  font-size: 20px;
+
+}
 
 }
