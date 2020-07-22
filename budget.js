@@ -88,7 +88,7 @@ function select_element(content){
 function remove_element(element){
   var element=document.getElementById(element);
   element.style.visibility='hidden';
-  element.style.height='0px';
+  element.style.opacity="0";
 
 }
 
@@ -98,6 +98,7 @@ function add_element(element){
   var element=document.getElementById(element);
   element.style.visibility='visible';
   element.style.height='50%';
+  element.style.opacity="1";
 
 }
 
@@ -142,6 +143,7 @@ function select_option(value,option){
 
 
 function addti(){ //function for total income
+
   income[0]=parseFloat(document.getElementById('mi1').value);
   income[1]=parseFloat(document.getElementById('mi2').value);
   income[2]=parseFloat(document.getElementById('mi3').value);
