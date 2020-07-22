@@ -6,11 +6,12 @@ body{
 }
 
 
+
 .header{ /*header box */
   position: relative;
   background-color:#0a192f;
   padding: 1% 1%;
-  width:100%;
+  min-width: 100%;
 
 
 
@@ -53,7 +54,7 @@ body{
   margin-left: 5%;
   margin-bottom: 1%;
   border-radius: 5px;
-  max-width:90%;
+  max-width:95%;
   font-size: 25px;
   background-color: #00bfff;
   color: white;
@@ -71,8 +72,7 @@ body{
   background-color: #00bfff;
   border: none;
   border-radius: 5px;
-  min-width: 340px;
-  max-width:70%;
+  width:30%;
   color: white;
   text-align: center;
 
@@ -248,21 +248,90 @@ input[type=number] {
 #gh:hover{
     background-color:#52a39e;
 }
-@media only screen and (max-width: 1250px) {
+@media only screen and (max-width: 600px) {
 .expense-btn{
-  margin-left: 10%;
+  margin-left: 5%;
+  margin-bottom: 1%;
+  border: none;
+  width:90%;
+  color: white;
+  text-align: center;
 
+}
+.expense-btn h1{
+font-size: 30px;
 }
 #income-btn{
-  margin-left: 10%;
-  width: 340px;
+  margin-left: 5%;
+  width: 90%;
 }
 #submit{
-  width: 340px;
+  width: 90%;
   float:left;
-  margin-left: 10%;
+  margin-left: 5%;
 
 
+}
+
+
+}
+@media only screen and (min-width: 600px) {
+.expense-btn{
+  margin-left: 3%;
+  margin-bottom: 1%;
+  border: none;
+  font-size: 25px;
+  width:45%;
+  color: white;
+  text-align: center;
+
+}
+.expense-btn h1{
+font-size: 25px;
+}
+#income-btn{
+  margin-left: 3%;
+  width: 93%;
+}
+#submit{
+  width: 93%;
+  float:left;
+  margin-left: 3%;
+
+
+}
+
+
+
+}
+@media only screen and (min-width: 1024px) {
+.expense-btn{
+  margin-left: 2%;
+  margin-bottom: 1%;
+  border: none;
+  font-size: 25px;
+  width:30%;
+  color: white;
+  text-align: center;
+
+}
+.expense-btn h1{
+font-size: 100%;
+}
+#income-btn{
+  margin-left: 2%;
+  width: 94%;
+}
+#submit{
+  width: 94%;
+  float:left;
+  margin-left: 2%;
+
+
+}
+.expense-btn img{
+height:150px;
+width:150px;
 }
 
 
