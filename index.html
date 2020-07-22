@@ -1,298 +1,293 @@
 <!--
-Author: https://github.com/ahmedwab
-Description: This webpage is a one time use to calculate your budget based on monthly figures.
-The user inputs his income and is presented a variety of options for his income sources.
-Furthermore, the user is able to input his expenses that are then converted to monthly expenses.
-The webpage uses bootstrap and a stylesheet for the visual layout.
-Google charts are also used to present visuals of the user's budget at the summary page.
+   Author: https://github.com/ahmedwab
+   Description: This webpage is a one time use to calculate your budget based on monthly figures.
+   The user inputs his income and is presented a variety of options for his income sources.
+   Furthermore, the user is able to input his expenses that are then converted to monthly expenses.
+   The webpage uses bootstrap and a stylesheet for the visual layout.
+   Google charts are also used to present visuals of the user's budget at the summary page.
 
 
 
--->
-
-
+   -->
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> <!-- Bootstrap -->
-    <link rel="stylesheet" href="stylesheet.css"> <!-- Stylesheet -->
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script> <!-- Google charts -->
-    <script src="budget.js" charset="utf-8"></script>
-    <script src="charts.js" charset="utf-8"></script>
-    <link rel="icon" type="images/png" href="images/favicon.png"/> <!--favicon -->
-    <title>Budget Calculator</title>
-  </head>
-
-  <body>
-
-
+   <head>
+      <meta charset="utf-8">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      <!-- Bootstrap -->
+      <link rel="stylesheet" href="stylesheet.css">
+      <!-- Stylesheet -->
+      <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script> <!-- Google charts -->
+      <script src="budget.js" charset="utf-8"></script>
+      <script src="charts.js" charset="utf-8"></script>
+      <link rel="icon" type="images/png" href="images/favicon.png"/>
+      <!--favicon -->
+      <title>Budget Calculator</title>
+   </head>
+   <body>
       <div class="header">
-        <div id="icon"><img src="images/box-50.png"></div>
-       <a href="index.html"<h3 id="title">Budget Calculator</h3></a>
-     </div>
-
-
+         <div id="icon"><img src="images/box-50.png"></div>
+         <a href="index.html"
+         <h3 id="title">Budget Calculator</h3>
+         </a>
+      </div>
       <br>
-      <div class="options" id="options" > <!-- div that carries all the income and expenses options -->
-     <div class="income-section" >
-        <div id="ti_option" > <!-- Total income option where user inputs income figures -->
-          <div id="income-btn" onclick="select_ti()">
-           <h1 id="ti_button"> Total Income </h1>
-           <img src="images/profit-100.png" alt="income">
-          </div>
-          <div class="content" id="ti_content">
-            <h1 class="close" onclick="remove_element('ti_content')">&#x2715;</h1>
-            <select name="period" id="ti_period"> <!-- Selector for time period -->
-                <option value="1">Daily</option>
-                <option value="2">Weekly</option>
-                <option value="3">Bi-Weekly</option>
-                <option value="4" selected>Monthly</option>
-                <option value="5">Yearly</option>
-            </select>
-            <!-- income values -->
-            <h4>Employment Income</h4>
-              <input type="number" id="mi1" value="0">
-            <h4>Investment Income</h4>
-              <input type="number" id="mi2" value="0">
-            <h4>Rental Income</h4>
-              <input type="number" id="mi3" value="0">
-            <h4>Tax Refund</h4>
-              <input type="number" id="mi4" value="0">
-            <h4>Other</h4>
-              <input type="number" id="mi5" value="0">
-            <br>
-            <button onclick="addti()">add</button>
-          </div>
-        </div>
-        </div>
-        <div class="expenses-section" >
-        <div id="le_option"> <!-- Living expenses option where user inputs living expenses-->
-          <div class="expense-btn" onclick="select_le()">
-            <h1 id="le_button"> Living Expenses </h1>
-            <img src="images/house-100.png" alt="house">
-          </div>
-          <div class="content" id="le_content">
-            <h1 class="close" onclick="remove_element('le_content')">&#x2715;</h1>
-            <select name="period" id="le_period"> <!-- Selector for time period -->
-                <option value="1">Daily</option>
-                <option value="2">Weekly</option>
-                <option value="3">Bi-Weekly</option>
-                <option value="4" selected>Monthly</option>
-                <option value="5">Yearly</option>
-            </select>
-            <!-- living expenses values -->
-            <h4>Mortgage/Rent</h4>
-              <input type="number" id="le1" value="0">
-            <h4>Maintenance</h4>
-              <input type="number" id="le2" value="0">
-            <h4>Utilities</h4>
-              <input type="number" id="le3" value="0">
-            <h4>Phone/TV/Internet</h4>
-              <input type="number" id="le4" value="0">
-            <h4>Groceries</h4>
-              <input type="number" id="le5" value="0">
-            <h4>Clothes</h4>
-              <input type="number" id="le6" value="0">
-            <h4>Other</h4>
-              <input type="number" id="le7" value="0">
-            <br>
-            <button onclick="addle()">add</button>
-          </div>
-        </div>
-
-        <div id="transportation"> <!-- transportation expenses option where user inputs transportation expenses-->
-          <div class="expense-btn" onclick="select_t()">
-            <h1 id="t_button"> Transportation </h1>
-            <img src="images/bus-100.png" alt="transportation">
-          </div>
-          <div class="content" id="t_content">
-            <h1 class="close" onclick="remove_element('t_content')">&#x2715;</h1>
-            <select name="period" id="t_period"> <!-- Selector for time period -->
-                <option value="1">Daily</option>
-                <option value="2">Weekly</option>
-                <option value="3">Bi-Weekly</option>
-                <option value="4" selected>Monthly</option>
-                <option value="5">Yearly</option>
-            </select>
-            <!-- transportation values -->
-            <h4>Vehicle</h4>
-              <input type="number" id="t1" value="0">
-            <h4>Gas</h4>
-              <input type="number" id="t2" value="0">
-            <h4>Transit Costs</h4>
-              <input type="number" id="t3" value="0">
-            <h4>Other</h4>
-              <input type="number" id="t4" value="0">
-            <br>
-            <button onclick="addt()">add </button>
-          </div>
-        </div>
-
-        <div id="financial"> <!-- Financial expenses option where user inputs financial expenses-->
-          <div class="expense-btn" onclick="select_f()">
-            <h1 id="f_button"> Financial </h1>
-            <img src="images/stocks-100.png" alt="financial">
-          </div>
-          <div class="content" id="f_content">
-            <h1 class="close" onclick="remove_element('f_content')">&#x2715;</h1>
-            <select name="period" id="f_period"> <!-- Selector for time period -->
-                <option value="1">Daily</option>
-                <option value="2">Weekly</option>
-                <option value="3">Bi-Weekly</option>
-                <option value="4" selected>Monthly</option>
-                <option value="5">Yearly</option>
-            </select>
-            <!-- financial values -->
-            <h4>TFSA contributions</h4>
-              <input type="number" id="f1" value="0">
-            <h4>RESP contributions</h4>
-              <input type="number" id="f2" value="0">
-            <h4>RRSP contributions</h4>
-              <input type="number" id="f3" value="0">
-            <h4>Credit Card Payments</h4>
-              <input type="number" id="f4" value="0">
-            <h4>Loan Payments</h4>
-              <input type="number" id="f5" value="0">
-            <h4>Insurance</h4>
-              <input type="number" id="f6" value="0">
-            <h4>Other</h4>
-              <input type="number" id="f7" value="0">
-
-            <br>
-            <button onclick="addf()">add</button>
-          </div>
-        </div>
-
-        <div id="childcare"> <!-- Child Care expenses option where user inputs childcare expenses-->
-          <div class="expense-btn" onclick="select_c()">
-            <h1 id="c_button"> Child Care </h1>
-            <img src="images/child-100.png" alt="child">
-          </div>
-          <div class="content" id="c_content">
-            <h1 class="close" onclick="remove_element('c_content')">&#x2715;</h1>
-            <select name="period" id="c_period"> <!-- Selector for time period -->
-                <option value="1">Daily</option>
-                <option value="2">Weekly</option>
-                <option value="3">Bi-Weekly</option>
-                <option value="4"  selected>Monthly</option>
-                <option value="5">Yearly</option>
-            </select>
-            <!-- childcare values -->
-            <h4>School/Day care</h4>
-              <input type="number" id="c1" value="0">
-            <h4>Activity/Clubs</h4>
-              <input type="number" id="c2" value="0">
-            <h4>Other</h4>
-              <input type="number" id="c3" value="0">
-
-            <br>
-            <button onclick="addc()">add</button>
-          </div>
-        </div>
-
-          <div id="healthcare"> <!-- Health Care expenses option where user inputs healthcare expenses-->
-            <div class="expense-btn" onclick="select_h()">
-              <h1 id="h_button"> Health Care </h1>
-              <img src="images/health-100.png" alt="health">
+      <div class="options" id="options" >
+         <!-- div that carries all the income and expenses options -->
+         <div class="income-section" >
+            <div id="ti_option" >
+               <!-- Total income option where user inputs income figures -->
+               <div id="income-btn" onclick="select_ti()">
+                  <h1 id="ti_button"> Total Income </h1>
+                  <img src="images/profit-100.png" alt="income">
+               </div>
+               <div class="content" id="ti_content">
+                  <h1 class="close" onclick="remove_element('ti_content')">&#x2715;</h1>
+                  <select name="period" id="ti_period">
+                     <!-- Selector for time period -->
+                     <option value="1">Daily</option>
+                     <option value="2">Weekly</option>
+                     <option value="3">Bi-Weekly</option>
+                     <option value="4" selected>Monthly</option>
+                     <option value="5">Yearly</option>
+                  </select>
+                  <!-- income values -->
+                  <h4>Employment Income</h4>
+                  <input type="number" id="mi1" value="0">
+                  <h4>Investment Income</h4>
+                  <input type="number" id="mi2" value="0">
+                  <h4>Rental Income</h4>
+                  <input type="number" id="mi3" value="0">
+                  <h4>Tax Refund</h4>
+                  <input type="number" id="mi4" value="0">
+                  <h4>Other</h4>
+                  <input type="number" id="mi5" value="0">
+                  <br>
+                  <button onclick="addti()">add</button>
+               </div>
             </div>
-            <div class="content" id="h_content">
-              <h1 class="close" onclick="remove_element('h_content')">&#x2715;</h1>
-              <select name="period" id="h_period"> <!-- Selector for time period -->
-                  <option value="1">Daily</option>
-                  <option value="2">Weekly</option>
-                  <option value="3">Bi-Weekly</option>
-                  <option value="4" selected>Monthly</option>
-                  <option value="5">Yearly</option>
-              </select>
-              <!-- healthcare values -->
-              <h4>Doctor Appointments</h4>
-                <input type="number" id="h1" value="0">
-              <h4>Prescription Drugs</h4>
-                <input type="number" id="h2" value="0">
-              <h4>vision</h4>
-                <input type="number" id="h3" value="0">
-              <h4>Dental</h4>
-                <input type="number" id="h4" value="0">
-              <h4>Other</h4>
-                <input type="number" id="h5" value="0">
-
-              <br>
-              <button onclick="addh()">add</button>
+         </div>
+         <div class="expenses-section" >
+            <div id="le_option">
+               <!-- Living expenses option where user inputs living expenses-->
+               <div class="expense-btn" onclick="select_le()">
+                  <h1 id="le_button"> Living Expenses </h1>
+                  <img src="images/house-100.png" alt="house">
+               </div>
+               <div class="content" id="le_content">
+                  <h1 class="close" onclick="remove_element('le_content')">&#x2715;</h1>
+                  <select name="period" id="le_period">
+                     <!-- Selector for time period -->
+                     <option value="1">Daily</option>
+                     <option value="2">Weekly</option>
+                     <option value="3">Bi-Weekly</option>
+                     <option value="4" selected>Monthly</option>
+                     <option value="5">Yearly</option>
+                  </select>
+                  <!-- living expenses values -->
+                  <h4>Mortgage/Rent</h4>
+                  <input type="number" id="le1" value="0">
+                  <h4>Maintenance</h4>
+                  <input type="number" id="le2" value="0">
+                  <h4>Utilities</h4>
+                  <input type="number" id="le3" value="0">
+                  <h4>Phone/TV/Internet</h4>
+                  <input type="number" id="le4" value="0">
+                  <h4>Groceries</h4>
+                  <input type="number" id="le5" value="0">
+                  <h4>Clothes</h4>
+                  <input type="number" id="le6" value="0">
+                  <h4>Other</h4>
+                  <input type="number" id="le7" value="0">
+                  <br>
+                  <button onclick="addle()">add</button>
+               </div>
             </div>
-          </div>
-
-            <div id="leisure"> <!-- Leisure  expenses option where user inputs leisure expenses-->
-              <div class="expense-btn" onclick="select_l()">
-                <h1 id="l_button"> Leisure </h1>
-                <img src="images/leisure-100.png" alt="leisure">
-              </div>
-              <div class="content" id="l_content">
-                <h1 class="close" onclick="remove_element('l_content')">&#x2715;</h1>
-                <select name="period" id="l_period"> <!-- Selector for time period -->
-                    <option value="1">Daily</option>
-                    <option value="2">Weekly</option>
-                    <option value="3">Bi-Weekly</option>
-                    <option value="4" selected>Monthly</option>
-                    <option value="5">Yearly</option>
-                </select>
-                <!-- leisure values -->
-                <h4>Club Memberships</h4>
+            <div id="transportation">
+               <!-- transportation expenses option where user inputs transportation expenses-->
+               <div class="expense-btn" onclick="select_t()">
+                  <h1 id="t_button"> Transportation </h1>
+                  <img src="images/bus-100.png" alt="transportation">
+               </div>
+               <div class="content" id="t_content">
+                  <h1 class="close" onclick="remove_element('t_content')">&#x2715;</h1>
+                  <select name="period" id="t_period">
+                     <!-- Selector for time period -->
+                     <option value="1">Daily</option>
+                     <option value="2">Weekly</option>
+                     <option value="3">Bi-Weekly</option>
+                     <option value="4" selected>Monthly</option>
+                     <option value="5">Yearly</option>
+                  </select>
+                  <!-- transportation values -->
+                  <h4>Vehicle</h4>
+                  <input type="number" id="t1" value="0">
+                  <h4>Gas</h4>
+                  <input type="number" id="t2" value="0">
+                  <h4>Transit Costs</h4>
+                  <input type="number" id="t3" value="0">
+                  <h4>Other</h4>
+                  <input type="number" id="t4" value="0">
+                  <br>
+                  <button onclick="addt()">add </button>
+               </div>
+            </div>
+            <div id="financial">
+               <!-- Financial expenses option where user inputs financial expenses-->
+               <div class="expense-btn" onclick="select_f()">
+                  <h1 id="f_button"> Financial </h1>
+                  <img src="images/stocks-100.png" alt="financial">
+               </div>
+               <div class="content" id="f_content">
+                  <h1 class="close" onclick="remove_element('f_content')">&#x2715;</h1>
+                  <select name="period" id="f_period">
+                     <!-- Selector for time period -->
+                     <option value="1">Daily</option>
+                     <option value="2">Weekly</option>
+                     <option value="3">Bi-Weekly</option>
+                     <option value="4" selected>Monthly</option>
+                     <option value="5">Yearly</option>
+                  </select>
+                  <!-- financial values -->
+                  <h4>TFSA contributions</h4>
+                  <input type="number" id="f1" value="0">
+                  <h4>RESP contributions</h4>
+                  <input type="number" id="f2" value="0">
+                  <h4>RRSP contributions</h4>
+                  <input type="number" id="f3" value="0">
+                  <h4>Credit Card Payments</h4>
+                  <input type="number" id="f4" value="0">
+                  <h4>Loan Payments</h4>
+                  <input type="number" id="f5" value="0">
+                  <h4>Insurance</h4>
+                  <input type="number" id="f6" value="0">
+                  <h4>Other</h4>
+                  <input type="number" id="f7" value="0">
+                  <br>
+                  <button onclick="addf()">add</button>
+               </div>
+            </div>
+            <div id="childcare">
+               <!-- Child Care expenses option where user inputs childcare expenses-->
+               <div class="expense-btn" onclick="select_c()">
+                  <h1 id="c_button"> Child Care </h1>
+                  <img src="images/child-100.png" alt="child">
+               </div>
+               <div class="content" id="c_content">
+                  <h1 class="close" onclick="remove_element('c_content')">&#x2715;</h1>
+                  <select name="period" id="c_period">
+                     <!-- Selector for time period -->
+                     <option value="1">Daily</option>
+                     <option value="2">Weekly</option>
+                     <option value="3">Bi-Weekly</option>
+                     <option value="4"  selected>Monthly</option>
+                     <option value="5">Yearly</option>
+                  </select>
+                  <!-- childcare values -->
+                  <h4>School/Day care</h4>
+                  <input type="number" id="c1" value="0">
+                  <h4>Activity/Clubs</h4>
+                  <input type="number" id="c2" value="0">
+                  <h4>Other</h4>
+                  <input type="number" id="c3" value="0">
+                  <br>
+                  <button onclick="addc()">add</button>
+               </div>
+            </div>
+            <div id="healthcare">
+               <!-- Health Care expenses option where user inputs healthcare expenses-->
+               <div class="expense-btn" onclick="select_h()">
+                  <h1 id="h_button"> Health Care </h1>
+                  <img src="images/health-100.png" alt="health">
+               </div>
+               <div class="content" id="h_content">
+                  <h1 class="close" onclick="remove_element('h_content')">&#x2715;</h1>
+                  <select name="period" id="h_period">
+                     <!-- Selector for time period -->
+                     <option value="1">Daily</option>
+                     <option value="2">Weekly</option>
+                     <option value="3">Bi-Weekly</option>
+                     <option value="4" selected>Monthly</option>
+                     <option value="5">Yearly</option>
+                  </select>
+                  <!-- healthcare values -->
+                  <h4>Doctor Appointments</h4>
+                  <input type="number" id="h1" value="0">
+                  <h4>Prescription Drugs</h4>
+                  <input type="number" id="h2" value="0">
+                  <h4>vision</h4>
+                  <input type="number" id="h3" value="0">
+                  <h4>Dental</h4>
+                  <input type="number" id="h4" value="0">
+                  <h4>Other</h4>
+                  <input type="number" id="h5" value="0">
+                  <br>
+                  <button onclick="addh()">add</button>
+               </div>
+            </div>
+            <div id="leisure">
+               <!-- Leisure  expenses option where user inputs leisure expenses-->
+               <div class="expense-btn" onclick="select_l()">
+                  <h1 id="l_button"> Leisure </h1>
+                  <img src="images/leisure-100.png" alt="leisure">
+               </div>
+               <div class="content" id="l_content">
+                  <h1 class="close" onclick="remove_element('l_content')">&#x2715;</h1>
+                  <select name="period" id="l_period">
+                     <!-- Selector for time period -->
+                     <option value="1">Daily</option>
+                     <option value="2">Weekly</option>
+                     <option value="3">Bi-Weekly</option>
+                     <option value="4" selected>Monthly</option>
+                     <option value="5">Yearly</option>
+                  </select>
+                  <!-- leisure values -->
+                  <h4>Club Memberships</h4>
                   <input type="number" id="l1" value="0">
-                <h4>Subscriptions</h4>
+                  <h4>Subscriptions</h4>
                   <input type="number" id="l2" value="0">
-                <h4>Travel</h4>
+                  <h4>Travel</h4>
                   <input type="number" id="l3" value="0">
-                <h4>Dining out</h4>
+                  <h4>Dining out</h4>
                   <input type="number" id="l4" value="0">
-                <h4>Pets</h4>
+                  <h4>Pets</h4>
                   <input type="number" id="l5" value="0">
-                <h4>Other</h4>
+                  <h4>Other</h4>
                   <input type="number" id="l6" value="0">
-
-
-                <br>
-                <button onclick="addl()">add</button>
-              </div>
-
-              <input type="button" value="submit" onclick="submit()" id="submit">
-                <input type="button" onclick="submit()" id="forward_button" value="Back to Charts &#11153;">
-
-          </div>
+                  <br>
+                  <button onclick="addl()">add</button>
+               </div>
+               <input type="button" value="submit" onclick="submit()" id="submit">
+               <input type="button" onclick="submit()" id="forward_button" value="Back to Charts &#11153;">
+            </div>
+         </div>
       </div>
-      </div>
-      </div>
-
-
-
-  <!-- Summary page where it displays all the summary information including graphs-->
-
+      <!-- Summary page where it displays all the summary information including graphs-->
       <div id="summary">
-        <input type="button" onclick="goback()" id="back_button" value="&#9166;">
-        <h4 id="summary_title"> Summary:</h4>
-        <h4 id ="funds"> </h4> <!-- Text that prompts the amount of available funds in each month-->
-          <div id="income_chart" style="width: 900px; height: 500px;" class="chart"></div>   <!-- Donut chart that displays income distribution-->
-          <div id="expenses_chart" style="width: 900px; height: 500px; border-bottom:2%;" class="chart"></div> <!-- Pie chart that displays expenses distribution-->
-
+         <input type="button" onclick="goback()" id="back_button" value="&#9166;">
+         <h4 id="summary_title"> Summary:</h4>
+         <h4 id ="funds"> </h4>
+         <!-- Text that prompts the amount of available funds in each month-->
+         <div id="income_chart" style="width: 900px; height: 500px;" class="chart"></div>
+         <!-- Donut chart that displays income distribution-->
+         <div id="expenses_chart" style="width: 900px; height: 500px; border-bottom:2%;" class="chart"></div>
+         <!-- Pie chart that displays expenses distribution-->
       </div>
       <!--
-  <div>
-    <a target="_blank" href="https://icons8.com/icons/set/economic-improvement">Profit icon</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
-    <a target="_blank" href="https://icons8.com/icons/set/cottage">House icon</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
-    <a target="_blank" href="https://icons8.com/icons/set/bus">Bus icon</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
-    <a target="_blank" href="https://icons8.com/icons/set/stocks">Stocks icon</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
-    <a target="_blank" href="https://icons8.com/icons/set/tummy-time">Child icon</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
-    <a target="_blank" href="https://icons8.com/icons/set/health-checkup">Health Checkup icon</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
-    <a target="_blank" href="https://icons8.com/icons/set/alpine-skiing">Alpine Skiing icon</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+         <div>
+           <a target="_blank" href="https://icons8.com/icons/set/economic-improvement">Profit icon</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+           <a target="_blank" href="https://icons8.com/icons/set/cottage">House icon</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+           <a target="_blank" href="https://icons8.com/icons/set/bus">Bus icon</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+           <a target="_blank" href="https://icons8.com/icons/set/stocks">Stocks icon</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+           <a target="_blank" href="https://icons8.com/icons/set/tummy-time">Child icon</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+           <a target="_blank" href="https://icons8.com/icons/set/health-checkup">Health Checkup icon</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+           <a target="_blank" href="https://icons8.com/icons/set/alpine-skiing">Alpine Skiing icon</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
 
-  </div>
-  -->
-
-
+         </div>
+         -->
       <!-- Footer section that displays more information about the project-->
-
-    <div class="footer">
-      <a href="https://github.com/ahmedwab"><img src="images/github.png" alt="Github Profile(ahmedwab)" id="gh"></a>
-    </div>
-  </body>
+      <div class="footer">
+         <a href="https://github.com/ahmedwab"><img src="images/github.png" alt="Github Profile(ahmedwab)" id="gh"></a>
+      </div>
+   </body>
 </html>
