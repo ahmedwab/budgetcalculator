@@ -335,6 +335,10 @@ font-size: 25px;
 
 
 }
+.content{
+  max-height: 800px;
+
+}
 
 
 
