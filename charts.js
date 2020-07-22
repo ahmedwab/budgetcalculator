@@ -40,6 +40,7 @@ function loadcharts(){
           title: 'Income Distribution',
           pieHole: 0.4,
           backgroundColor: 'rgb(255,255,255)'
+
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('income_chart'));
