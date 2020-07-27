@@ -24,8 +24,8 @@ Shoot me a private message on my page.
 
 ```
 A few minor changes could be done for the summary page. 
-The user can select an option to display information using daily, weekly, bi-weekly, monthly
-, and yearly demographics
+
+The charts need to be displayed in divs of their own where they are displayed side by side.
 ```
 
 
