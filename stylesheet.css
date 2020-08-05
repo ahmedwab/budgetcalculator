@@ -211,7 +211,7 @@ input[type=number] {
   border-bottom: 3px solid lightgrey;
   margin-bottom: 1%;
   transition-duration: 0.5s;
-
+  outline:none;
 }
 
 input[type=number]:hover {
