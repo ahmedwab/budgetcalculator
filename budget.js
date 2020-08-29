@@ -80,7 +80,6 @@ function select_element(content){
   }
   else {
     add_element(content);
-
   }
 }
 
@@ -288,8 +287,8 @@ function submit(){
   remove_element('forward_button');
 
   var display=document.getElementById('summary')
-  display.style.marginTop='-10%';
-  display.style.visibility='visible';
+  display.style.marginTop= '-10%';
+  display.style.visibility= 'visible';
 
 
   document.getElementById('funds').innerHTML="Total Available Monthly Funds: "+total.toFixed(2);
